@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID and JavaScript</title>
+    <script>
+        function dispString(){
+            document.getElementById('disp1').innerHTML='<h3>클릭하면 나타나는 글자</h3>';
+        }
+        function background(){
+            documnet.getElementById('disp1').style.backgroundColor='tomato';
+        }
+    </script>
+</head>
+<body>
+    <h1>My first JavaScript</h1>
+    <button onclick="dispString()">click here</button>
+    <button onclick="background()">background</button>
+    <div id="disp1"></div>
+</body>
+</html>
