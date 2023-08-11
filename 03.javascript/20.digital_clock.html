@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function twoDigit(num){
+            // if(num<10)
+            //     return '0' + num;
+            // else
+            //     return String(num);
+            
+            // 위에 내용과 같음
+            return (num<10)?'0' + num:String(num);
+        }
+        function myDateTime(dt){
+            return `${dt.getFullYear()}-${twoDigit(dt.getMonth()+1)}-${twoDigit(dt.getDate())} ` +
+                   `${twoDigit(dt.getHours())}:${twoDigit(dt.getMinutes())}:${twoDigit(dt.getSeconds())}`;
+        }
+        window.onload=function(){
+            setInterval(function(){
+                let now=new Date();
+                const day = '일월화수목금토'.split('');
+                let dateTimeStr=myDateTime(now);
+                let dateStr = dateTimeStr.substring(0,10);
+                dateStr+=' (' + day[now.getDay()] + ') ';
+                let timeStr = dateTimeStr.substring(11); // 19는 생략 가능하다
+                document.getElementById('date').innerHTML=dateStr;
+                document.getElementById('time').innerHTML=timeStr;
+            }, 1000);
+        }
+        
+    </script>
+</head>
+<body style="margin: 40px;">
+    <div style="text-align: center;">
+    <h2 id="date"></h2>
+    <hr>
+    <h1 id="time"></h1>
+    </div>
+</body>
+</html>

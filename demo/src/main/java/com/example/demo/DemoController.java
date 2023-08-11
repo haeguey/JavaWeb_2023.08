@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Stack;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,11 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 
 @Controller
 public class DemoController {
 	// http://localhost:8080/demo/hello
+	
+	String a_= null, b_= null, op = null;
+	int a = 0, b = 0, result = 0;
+	
 	@GetMapping("/index")
 	@ResponseBody
 	public String index() {
@@ -112,6 +119,7 @@ public class DemoController {
 	
 	@PostMapping("/write")
 	public String writeProc(HttpServletRequest req, Model model) {
+
 		String title = req.getParameter("title");
 		String[] languages = req.getParameterValues("language");
 		String content = req.getParameter("content");
@@ -123,5 +131,84 @@ public class DemoController {
 		model.addAttribute("board", board);
 		
 		return "07.writeResult";
+	}
+	
+	@GetMapping("/calculator_sol")
+	public String calculatorForm(String eval, Model model) {
+		model.addAttribute("eval", eval);
+		return "08.calculator_sol";
+	}
+	
+	@PostMapping("/calculator_sol")
+	public String calculatorProc(HttpServletRequest req, HttpSession session, Model model) {
+		String num_ = req.getParameter("num");
+		String op_ = req.getParameter("op");
+		Object obj = session.getAttribute("stack");
+		Stack<String> stack = (obj == null) ? new Stack<>() : (Stack) obj;
+		
+		if (num_ != null) {
+			if (stack.isEmpty()) {
+				stack.push(num_);
+			} else {
+				String element = stack.pop();
+				if (element.equals("/") || element.equals("*")
+						|| element.equals("-") || element.equals("+")) {
+					stack.push(element);
+					stack.push(num_);
+				} else {
+					num_ = element + num_;
+					stack.push(num_);
+				}
+			}
+			session.setAttribute("stack", stack);
+			model.addAttribute("eval", getEval(stack));
+		} else if (op_ != null && !op_.equals("=")) {
+			if (op_.equals("C")) {
+				if (stack.isEmpty())
+					;
+				else {
+					String s = stack.pop();
+					if (s.length() > 1) {
+						s = s.substring(0, s.length()-1);
+						stack.push(s);
+					}
+				}
+			} else 
+				stack.push(op_);
+			session.setAttribute("stack", stack);
+			model.addAttribute("eval", getEval(stack));
+		} else {
+			int result = 0;
+			int num2 = Integer.parseInt(stack.pop());
+			String op = stack.pop();
+			int num1 = Integer.parseInt(stack.pop());
+			switch(op) {
+			case "+": result = num1 + num2; break;
+			case "-": result = num1 - num2; break;
+			case "*": result = num1 * num2; break;
+			case "/": result = (int) (num1 / num2); break;
+			default: result = 0;
+			}
+			session.removeAttribute("stack");
+			model.addAttribute("eval", result);
+		}
+		return "08.calculator_sol";
+	}
+	
+	String getEval(Stack<String> stack) {
+		String eval = "";
+		for (String s: stack)
+			eval += s + " ";
+		return eval;
+	}
+	
+	@GetMapping("/calculator")
+	public String calculator2Form() {
+		return "08.calculator";
+	}
+	
+	@PostMapping("/calculator")
+	public String calculator() {
+		return "08.calculator";
 	}
 }

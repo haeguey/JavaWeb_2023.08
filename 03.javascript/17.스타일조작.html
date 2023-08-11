@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Modifier (DOM)</title>
+    <script>
+        window.onload=function(){
+
+            // div란 tag생성
+            let div='';
+            for(let i=0; i<256; 1++)
+                div+='<div></div>';
+            document.body.innerHTML=div;
+
+            // 생성된 tag에 스타일 적용
+            let divs=document.querySelectorAll('div');
+            for(let i=0; i<256; i++){
+                let div = divs[i];
+                div.style.height='2px';
+                div.style.backgroundColor=`rgb(${255-i}, ${255-i}, ${255-i})`;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

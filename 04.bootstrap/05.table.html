@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid p-3 bg-primary text-white text-center">
+        <h1>My Bootstrap Page</h1>
+        <p>Tables</p>
+    </div>
+    <div class="container mt-4">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h2>Basic Table (Bordered Rows)</h2>
+            <p>The .table-striped class adds basic styling (zebra-stripes:light padding and horizontal dividers) to a table:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 30px">Firstname</th>
+                        <th style="width: 30px">Lastname</th>
+                        <th style="width: 40px">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 class="mt-4">Borderless Rows</h2>
+            <p>The .table-borderless class removes borders from the table:</p>
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th style="width: 30px">Firstname</th>
+                        <th style="width: 30px">Lastname</th>
+                        <th style="width: 40px">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 class="mt-4">Small Table</h2>
+            <p>The .table-sm class makes the table smaller by cutting cell padding in half:</p>
+            <p>이 테이블은 리스트에 사용하기 좋음</p>
+            <table class="table table-bordered table-sm">
+                <thead>
+                    <tr>
+                        <th style="width: 30px">Firstname</th>
+                        <th style="width: 30px">Lastname</th>
+                        <th style="width: 40px">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</body>
+
+</html>

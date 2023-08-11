@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid p-3 bg-primary text-white text-center">
+        <h1>My Bootstrap Page</h1>
+        <p>Images</p>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <h2>Rounded Corners</h2>
+                <p>The .rounded class adds rounded corners to an image:</p>            
+                <img src="../03.javascript/img/St_Lucia_1.jpg" class="rounded" alt="Cinque Terre" width="80%"> 
+            </div>
+            <div class="col">
+                <h2>Circle</h2>
+                <p>The .rounded-circle class shapes the image to a circle:</p>            
+                <img src="../03.javascript/img/St_Lucia_2.jpg" class="rounded-circle" alt="Cinque Terre" width="300"> 
+            </div>
+            <div class="col">
+                <h2>Thumbnail</h2>
+                <p>The .img-thumbnail class creates a thumbnail of the image:</p>            
+                <img src="../03.javascript/img/St_Lucia_3.jpg" class="img-thumbnail" alt="Cinque Terre" width="300"> 
+            </div>
+        </div>
+        <div class="container mt-3">
+            <h2>Aligning images</h2>
+            <p>Use the float classes to float the image to the left or to the right:</p>
+            <div class="row">
+                <div class="col">
+                    <img src="../03.javascript/img/St_Lucia_3.jpg" class="float-start" alt="Paris" width="300"> 
+                </div>
+                <div class="col">
+                    <img src="../03.javascript/img/St_Lucia_3.jpg" class="float-end" alt="Paris" width="300"> 
+                </div>
+            </div>
+
+        </div>
+        <div class="container mt-3">
+            <h2>Centered Image</h2>
+            <p>Center an image by adding the utility classes .mx-auto (margin:auto) and .d-block (display:block) to the image:</p> 
+            <img src="../03.javascript/img/St_Lucia_2.jpg" class="mx-auto d-block" style="width:30%"> 
+          </div>
+    </div>
+</body>
+</html>
