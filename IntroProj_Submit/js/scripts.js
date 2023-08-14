@@ -1,5 +1,5 @@
 //
-// Scripts
+// Scripts begins
 // 
 
 window.addEventListener('DOMContentLoaded', event => {

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BootStrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        td {
+            text-align: center;
+            font-size: small
+        }
+
+        * {
+            font-family: 'Noto Sans KR', sans-serif
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <img src="img/logo.jpg" height="131">
+            <div class="p-2 bg-dark justify-content-between">
+                <img src="https://picsum.photos/1500/180" width="100%">
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-top: 240px">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <!--enctype : 파일 전송 위하여 인코딩 필요-->
+                <form action="/demo/bs/register" method="post" enctype="multipart/form-data">
+                    <table class="table table-borderless">
+                        <tr>
+                            <td colspan="3" style="text-align: left; font-size: x-large;"
+                                class="border border-dark border-2 border-top-0 border-start-0 border-end-0">Join Membership</td>    
+                        </tr>
+                        <tr>
+                            <td style="width: 35%;"><label class="col-form-label form-control-sm mt-3">User ID</label></td>
+                            <td style="width: 50%;"><input type="text" name="uid"
+                                    class="form-control form-control-sm mt-3" placeholder="Enter the user ID"></td>
+                                    <td style="width: 15%;"><label class="col-form-label form-control-sm mt-3">
+                                        <!--eventlistner를 이용-->
+                                        <a href="#" id="dupCheck"><span
+                                                class="badge bg-secondary"><small>중복확인</small></span></a>
+                                    </label></td>
+                        </tr>
+                        <tr>
+                            <td><label class="col-form-label form-control-sm mt-3">패스워드</label></td>
+                            <td><input type="password" name="pwd" class="form-control form-control-sm mt-3"
+                                    placeholder="Enter the password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="col-form-label form-control-sm mt-3">패스워드 재입력</label></td>
+                            <td><input type="password" name="rePwd" class="form-control form-control-sm mt-3"
+                                    placeholder="Re-type the password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="col-form-label form-control-sm mt-3">Name</label></td>
+                            <td><input type="text" name="name" class="form-control form-control-sm mt-3"
+                                    placeholder="Enter your name"></td>
+                        </tr>
+                        <tr>
+                            <td><label class="col-form-label form-control-sm mt-3">Email address</label></td>
+                            <td><input type="text" name="email" class="form-control form-control-sm mt-3"
+                                    placeholder="Enter your email address"></td>
+                        </tr>
+                        <tr>
+                            <td><label class="col-form-label form-control-sm mt-3">Profile photo</label></td>
+                            <td><input type="file" name="profile" class="form-control form-control-sm mt-3"
+                                    placeholder="Select photo"></td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td colspan="3">
+                                <input class="radio-inline" type="radio" name="gender" value="1" style="padding-right:15px;" checked="true"><span> male</span>
+                                <input class="radio-inline ms-4" type="radio" name="gender" value="0" style="padding-left:15px;"><span> female</span>
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="submit" class="btn btn-primary">제출</button>
+                                <button type="submit" class="btn btn-secondary">취소</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</body>
+
+</html>
