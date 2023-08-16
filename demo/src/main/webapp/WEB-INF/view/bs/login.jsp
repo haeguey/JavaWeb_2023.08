@@ -57,7 +57,7 @@
                         <tr>
                             <td colspan="2">
                                 <button type="submit" class="btn btn-primary">로그인</button>
-                                <button type="submit" class="btn btn-primary">로그인</button>
+                                <button type="submit" class="btn btn-secondary">취소</button>
                             </td>
                             
                         </tr>

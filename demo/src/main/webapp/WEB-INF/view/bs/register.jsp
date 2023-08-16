@@ -36,7 +36,7 @@
             <div class="col"></div>
             <div class="col">
                 <!--enctype : 파일 전송 위하여 인코딩 필요-->
-                <form action="/demo/bs/register" method="post" enctype="multipart/form-data">
+                <form action="/demo/bs/register3" method="post" enctype="multipart/form-data">
                     <table class="table table-borderless">
                         <tr>
                             <td colspan="3" style="text-align: left; font-size: x-large;"
