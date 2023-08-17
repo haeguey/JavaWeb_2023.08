@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Expression Language (EL)</title>
-	<style>td {padding: 3px;}</style>
+	<style>td, th {padding: 3px;}</style>
 </head>
 <body style="margin: 40px;">
 	<h1>Scope(객체 범위)</h1>

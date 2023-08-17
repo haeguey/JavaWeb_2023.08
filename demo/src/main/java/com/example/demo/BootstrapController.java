@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import jakarta.servlet.http.HttpServletRequest;
+// import jakarta.servlet.http.HttpServletRequest;	// <version>3.1.2</version>에서 사용
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/bs")
