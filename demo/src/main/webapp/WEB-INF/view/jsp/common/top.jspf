@@ -9,7 +9,7 @@
     	            <a class="nav-link ${(topMenu eq 'board') ? 'active' : ''}" href="#"><i class="far fa-list-alt"></i> 게시판</a>
                 </li>
                 <li class="nav-item ms-3">
-                    <a class="nav-link ${(topMenu eq 'user') ? 'active' : ''}" href="sample"><i class="fas fa-user-friends"></i> 사용자</a>
+                    <a class="nav-link ${(topMenu eq 'user') ? 'active' : ''}" href="sample2"><i class="fas fa-user-friends"></i> 사용자</a>
                 </li>
                 <li class="nav-item dropdown ms-3">
                     <a class="nav-link dropdown-toggle ${(topMenu eq 'ai') ? 'active' : ''}" href="#" data-bs-toggle="dropdown">

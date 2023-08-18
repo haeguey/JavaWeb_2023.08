@@ -28,6 +28,29 @@ public class JspController {
 		return "jsp/sample";
 	}
 	
+	@GetMapping("/sample2")
+	public String sample2(Model model) {
+	
+		Address addr1 = new Address(12345, "LA", "미국");
+		Address addr2 = new Address(67890, "NY", "미국");
+		Member mem1 = new Member(101, "James", addr1);
+		Member mem2 = new Member(102, "Maria", addr2);
+		Member mem3 = new Member(103, "홍길동", new Address(23456, "서울", "한국"));
+		Member mem4 = new Member(104, "김Java", new Address(13579, "제주", "한국"));
+		
+		// ---------- List로 보내기 --------------
+		List<Member> list = new ArrayList<>();
+		list.add(mem1);
+		list.add(mem2);
+		list.add(mem3);
+		list.add(mem4);
+		model.addAttribute("memberList", list);
+		// ----------------------------------------
+		model.addAttribute("topMenu", "user");
+		
+		return "jsp/sample2";
+	}
+	
 	@GetMapping("/schedule")
 	public String schedule(Model model) {
 		model.addAttribute("topMenu", "schedule");
@@ -157,4 +180,20 @@ public class JspController {
 		return "jsp/jstl3_fn";
 	}
 	
+	@GetMapping("/homework")
+	public String homework(Model model) {
+		Address addr1 = new Address(12345, "LA", "미국");
+		Address addr2 = new Address(67890, "NY", "미국");
+		Member mem1 = new Member(101, "James", addr1);
+		Member mem2 = new Member(102, "Maria", addr2);
+		Member mem3 = new Member(103, "홍길동", new Address(23456, "서울", "한국"));
+		Member mem4 = new Member(104, "김Java", new Address(13579, "제주", "한국"));
+		
+		List<Member> list = new ArrayList<>();
+		list.add(mem1);	list.add(mem2); list.add(mem3);	list.add(mem4);
+		list.add(mem1);	list.add(mem2); list.add(mem3);	list.add(mem4);
+		model.addAttribute("memberList", list);
+		
+		return "jsp/homework";
+	}
 }

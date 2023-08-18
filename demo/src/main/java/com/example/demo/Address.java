@@ -14,7 +14,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [zipCode=" + zipCode + ", city=" + city + ", country=" + country + "]";
+		return "Zip Code=" + zipCode + ", City=" + city + ", Country=" + country;
 	}
 
 	public int getZipCode() {

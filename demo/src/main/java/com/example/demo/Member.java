@@ -13,7 +13,7 @@ public class Member {
 	}
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", name=" + name + ", addr=" + addr + "]";
+		return "ID=" + id + ", Name=" + name + ", Address=" + addr;
 	}
 	public int getId() {
 		return id;
