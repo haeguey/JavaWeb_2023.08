@@ -11,26 +11,32 @@ public class BookTest {
 
 		BookDao bDao = new BookDao();
 		Book b = bDao.getBook(5);
-		// System.out.println(bk);
+		// System.out.println(b);
 		
-		// 모든 Customer List를 가져옴
+		// bookId 값으로 검색해서 Book 객체를 구해서 출력
+		// Book b = bDao.getBook(6);
+		// System.out.println(b);
+		
+		// cDao.insertBook(Book b1)
+//		Book b1 = new Book(14, "파이썬 웹 프로그래밍", "한빛미디어", 32000);
+//		bDao.insertBook(b1);
+//		System.out.println(b1);
+		
+		// 모든 Book List를 가져옴
 		List<Book> list = bDao.getBookList();
-		for (Book book : list) {
-			System.out.println(book);
+		for (Book b2 : list) {
+			System.out.println(b2);
 		}
-				
-		// custId 값으로 검색해서 Customer 객체를 구해서 출력
-		// Customer c1 = cDao.getCustomer(6);
-		// System.out.println(c);
-		
-		
-		// cDao.insertCustomer(Customer c)
-		
+		System.out.println(b2);
 		
 		// cDao.updateCustomer(Customer c)
 		
 		
 		// cDao.deleteCustomer(int custId)
+		
+		// 모든 Customer List를 가져옴
+		
+		// address 값에서 "대한민국"이란 단어를 검색해서 CustomerListByAddress 객체를 구해서 출력
 		
 	}
 

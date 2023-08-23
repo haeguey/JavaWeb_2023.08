@@ -49,7 +49,7 @@ public class CustomerDao {
 			pstmt.setInt(1, custId);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {		// return 값이 남아있는 동안
-				custId = rs.getInt(1);
+				custId = rs.getInt(1);		// SQL은 시작이 0이 아닌 1부터이다.
 				String name = rs.getString(2);
 				String addr = rs.getString(3);
 				String phone = rs.getString(4);
