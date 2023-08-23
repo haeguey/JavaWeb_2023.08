@@ -1,5 +1,7 @@
 package com.example.demo.oracle.Exercise;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class BookDao {
 
@@ -14,21 +17,35 @@ public class BookDao {
 	private String user;
 	private String password;
 	private String database;
-	private int port;
+	// private int port;
+	private String port;
 	
-	public BookDao(String host, String user, String password, String database, int port) {
-		this.host = "localhost";
-		this.user = "hmuser";
-		this.password = "hmpass";
-		this.database = "xe";
-		this.port = 1521;
+	public BookDao() {
+		
+		try {
+			Properties props = new Properties();
+			String filename = "D:/JavaWeb/demo/src/main/java/com/example/demo/oracle/oracle.properties";
+			InputStream is = new FileInputStream(filename);
+			props.load(is);
+			is.close();
+			
+			this.host = props.getProperty("host");
+			this.user = props.getProperty("user");
+			this.password = props.getProperty("password");
+			this.database = props.getProperty("database");
+			this.port = props.getProperty("port");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	Connection myConnection() {
 		Connection conn = null;
 		
 		try {
-			String connStr = "jdbc:oracle:thin:@"+host+":"+port+":"+database;
+			String connStr = "jdbc:oracle:thin:@" + host + ":" + port + ":" + database;
 			conn = DriverManager.getConnection(connStr, user, password);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -60,9 +77,9 @@ public class BookDao {
 		return book;
 	}
 	
-	public List<Book> getCustomerList(){
+	public List<Book> getBookList(){
 		Connection conn = myConnection();
-		String sql = "select * from customer";
+		String sql = "select * from book";
 		List<Book> list = new ArrayList<>();
 		try {
 			Statement stmt = conn.createStatement();
