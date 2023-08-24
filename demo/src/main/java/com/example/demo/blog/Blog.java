@@ -39,7 +39,7 @@ public class Blog {
 		this.viewCount = viewCount;
 		this.isDeleted = isDeleted;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Blog [blogId=" + blogId + ", penName=" + penName + ", title=" + title + ", content=" + content

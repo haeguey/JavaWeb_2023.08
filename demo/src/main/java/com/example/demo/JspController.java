@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
 
 
-@Controller
-@RequestMapping("/jsp")
+//@Controller
+//@RequestMapping("/jsp")
 public class JspController {
 
 	@GetMapping("/sample")

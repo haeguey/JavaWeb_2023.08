@@ -15,8 +15,8 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 // import jakarta.servlet.http.HttpServletRequest;	// <version>3.1.2</version>에서 사용
 import javax.servlet.http.HttpServletRequest;
 
-@Controller
-@RequestMapping("/bs")
+//@Controller
+//@RequestMapping("/bs")
 public class BootstrapController {
 	@Value("${spring.servlet.multipart.location}")
 	private String uploadDir;

@@ -10,12 +10,12 @@ import java.util.List;
 
 import com.example.demo.oracle.Customer;
 
-//import org.springframework.beans.factory.annotation.Value;
-//import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class BlogDao {
-/*
+
 	@Value("${spring.datasource.url}")
 	private String url;
 	
@@ -24,12 +24,12 @@ public class BlogDao {
 	
 	@Value("${spring.datasource.password}")
 	private String password;
-*/	
 	
+/*	
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String username = "hmuser";
 	private String password = "hmpass";
-	
+*/	
 	public Blog getBlog(int blogId) {
 		String sql = "select * from blog where blogId=?";
 		Blog blog = null;

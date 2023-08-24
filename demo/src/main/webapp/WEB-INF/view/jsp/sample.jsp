@@ -9,8 +9,8 @@
 <head>
 	<%@ include file="./common/header.jspf" %>
 	<style>
-		th { text-align: center; width: 14.28%; }
-        td { height: 100px; }
+        th { text-align: center; width: 2%; background-color: dimgray; height: 50px; }
+        td { height: 50px; text-align: center; }
 	</style>
 </head>
 <body>

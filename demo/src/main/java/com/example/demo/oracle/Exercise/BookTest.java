@@ -27,7 +27,7 @@ public class BookTest {
 		for (Book b2 : list) {
 			System.out.println(b2);
 		}
-		System.out.println(b2);
+		//System.out.println(b2);
 		
 		// cDao.updateCustomer(Customer c)
 		

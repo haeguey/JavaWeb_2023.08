@@ -1,4 +1,4 @@
-package com.example.demo.blog;
+package com.example.demo;
 
 public class StackOverflowErrorClass {
 	 static int i = 0;
