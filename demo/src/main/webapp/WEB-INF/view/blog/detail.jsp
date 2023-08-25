@@ -8,6 +8,11 @@
 <html>
 <head>
 	<%@ include file="./common/header.jspf" %>
+	<script>
+		function showModal() {
+			$('#deleteModel').modal('show');
+		}
+	</script>
 	<style>
         th, td { text-align: center;}
     </style>
@@ -33,6 +38,13 @@
             			<a href="/demo/blog/delete/${blog.blogId}">
             				<i class="ms-3 fa-solid fa-trash-can"></i> Delete
             			</a>
+            			<button type="button" class="btn btn-outline-primary btn-small ms-3"
+            					 data-bs-toggle="modal" data-bs-target="#deleteModal">
+           					Modal delete
+        				</button>
+        				<a href="javascript:showModal()">
+            				<i class="ms-3 fa-regular fa-window-maximize"></i> Delete
+            			</a>
             		</span>
            		</h3>
                 <hr>
@@ -52,8 +64,34 @@
 					<div class="col-10">
 						${fn:replace(blog.content, newline, '<br>')}
 					</div>
-					<div class="col-1"></div>               	
-               	</div>
+				<div class="col-1"></div>
+				
+					    <!-- The Modal -->
+				    <div class="modal" id="deleteModal">
+				        <div class="modal-dialog">
+				            <div class="modal-content">
+				        
+				                <!-- Modal Header -->
+				                <div class="modal-header">
+				                    <h4 class="modal-title">Confirm Delete</h4>
+				                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				                </div>
+				        
+				                <!-- Modal body -->
+				                <div class="modal-body">
+				                    Do you really want to delete?
+				                </div>
+				        
+				                <!-- Modal footer -->
+				                <div class="modal-footer">
+				                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+				                    		onclick="location.href='/demo/blog/deleteConfirm/${blog.blogId}'" >Delete</button>
+				                 	<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+				                </div>
+				            </div>
+				        </div>               	
+	               	</div>
+				</div>
 			</div>
 			<!-- ==================== Main ==================== -->
         </div>

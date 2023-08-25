@@ -11,6 +11,14 @@
 	<style>
         th, td { text-align: center;}
     </style>
+    <script>
+    	function search(){
+    		let field = document.getElementById('field').value;
+    		let query = document.getElementById('query').value;
+    		//console.log("search()", field, query);	// 브라우저 console 창에서 실행이 되는지 확인용 
+    		location.href='/demo/blog/list?f=' + field + '&q=' + query;
+    	}
+    </script>
 </head>
 <body>
 	<%@ include file="./common/top.jspf" %>
@@ -21,14 +29,35 @@
             <%@ include file="./common/aside.jspf" %>
             <!-- ==================== Main ==================== -->
 			<div class="col-9">
-            	<h3>
-            		<strong>List of My Blog</strong>
-            		<span style="font-size: 0.6em;">
-            			<a href="/demo/blog/write">
-            				<i class="ms-5 fa-regular fa-file-lines"></i> Write
-            			</a>
-            		</span>
-            	</h3>
+			<table class="table table-sm table-borderless">
+				<tr>
+					<td style="width: 52%; text-align: left;">
+						<h3>
+		            		<strong>List of My Blog</strong>
+		            			<span style="font-size: 0.6em;">
+			            			<a href="/demo/blog/write">
+			            				<i class="ms-5 fa-regular fa-file-lines"></i> Write
+			            			</a>
+		            		</span>
+	            		</h3>
+					</td>
+					<td style="width: 15%;">
+						<select class="form-select" id="field">
+							<option value="title" ${field eq 'title' ? 'selected' : ''}>title</option>
+							<option value="content" ${field eq 'content' ? 'selected' : ''}>content</option>
+							<option value="penName" ${field eq 'penName' ? 'selected' : ''}>author</option>
+						</select>
+					</td>
+					<td style="width: 25%;">
+						<input class="form-control" placeholder="search something..." id="query" value="${query}"
+								onkeyup="if(window.event.keyCode==13) search()">
+					</td>
+					<td style="width: 8%;">
+						<button class="btn btn-outline-primary" onclick="search()">Search</button>
+					</td>
+				</tr>
+			</table>
+
                 <hr>
 				<table class="table">
 					<tr class="table-secondary">
