@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- <body> 상단에 있는 navigation bar --%>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<div class="col-3">
+	<img src="https://picsum.photos/256/256" class="rounded-circle" width="90%">
+	<div class="mt-2">
+	    "Well done is better than well said" - Benjamin Franklin
+	    <a href="#"><span class="badge bg-secondary">Edit</span></a>
+	</div>
+	<div class="mt-5">
+	    <i class="fa fa-envelope me-2"></i><a href="mailto:daily.ritual.gargle@gmail.com">email me</a><br>
+	    <img src="/demo/img/github.png" height="16" class="me-2"><a href="https://github.com/haeguey">my github</a><br>
+	    <img src="/demo/img/linkedIn.svg" height="16" class="me-2"><a href="#">linkedIn</a><br>
+	    <img src="/demo/img/addr.jpg" height="16" class="me-2">Seoul, Korea | Global<br><br>
+	    <h5><span class="badge bg-secondary">Today's weather:</span></h5>
+	    	<iframe width="230" height="230" src="https://embed.windy.com/embed2.html?lat=34.597&lon=127.178&detailLat=37.207&detailLon=126.817&width=230&height=230&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=true&type=map&location=coordinates&detail=&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1" frameborder="0">
+	    	</iframe><br>
+	    <%-- <button class="btn btn-sm btn-outline-primary mt-3">Edit Profile</button> --%>
+	</div>
+</div>
+

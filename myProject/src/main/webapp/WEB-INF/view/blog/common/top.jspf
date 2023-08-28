@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- <body> 상단에 있는 navigation bar --%>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <a class="navbar-brand mx-5" href="schedule"><img src="/myProject/img/logo.jpg" height="40"></a>
+                <li class="nav-item ms-3">
+    	            <a class="nav-link ${(topMenu eq 'blog') ? 'active' : ''}" href="/myProject/blog/list"><i class="fa-solid fa-blog"></i> My Blog</a>
+                </li>
+                <li class="nav-item ms-3">
+    	            <a class="nav-link ${(topMenu eq 'board') ? 'active' : ''}" href="#"><i class="far fa-list-alt"></i> Board</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link ${(topMenu eq 'user') ? 'active' : ''}" href="#"><i class="fas fa-user-friends"></i> User</a>
+                </li>
+                <li class="nav-item dropdown ms-3">
+                    <a class="nav-link dropdown-toggle ${(topMenu eq 'ai') ? 'active' : ''}" href="#" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-brain"></i> AI
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                        <li><a class="dropdown-item" href="#">Link 3</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Another link</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link ${(topMenu eq 'schedule') ? 'active' : ''}" href="schedule"><i class="fa-solid fa-calendar-days"></i> Schedule</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link ${(topMenu eq 'logout') ? 'active' : ''}" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+            <span class="navbar-text me-3">Welcome 홍길동!</span>
+        </div>
+    </nav>
+

@@ -1,0 +1,10 @@
+Routing table,,,,,
+routing,method,input parameter,view,output parameter,session
+/demo/blog/list,GET,"f, q",list.jsp,"blogList, menu, field, query",
+/demo/blog/detail/{blogId},GET,"blogId, option",detail.jsp,"blog, menu",
+/demo/blog/write,GET,,write.jsp,menu,
+/demo/blog/write,POST,"penName, title, content",redirect:/blog/list,,
+/demo/blog/update/{blogId},GET,blogId,update.jsp,"blog, menu",
+/demo/blog/update/,POST,"blogId, penName, title, content",redirect:/blog/detail/{blogId},,
+/demo/blog/delete/{blogId},GET,blogId,delete.jsp,,
+/demo/blog/deleteConfirm/{blogId},GET,blogId,redirect:/blog/list,,

@@ -31,13 +31,13 @@
             	<h3>
             		<strong>Detail</strong>
             		<span style="font-size: 0.6em;">
-            			<a href="/demo/blog/list">
+            			<a href="/myProject/blog/list">
             				<i class="ms-5 fa-solid fa-list"></i> List
             			</a>
-            			<a href="/demo/blog/update/${blog.blogId}">
+            			<a href="/myProject/blog/update/${blog.blogId}">
             				<i class="ms-3 fa-regular fa-pen-to-square"></i> Edit
             			</a>
-            			<a href="/demo/blog/delete/${blog.blogId}">
+            			<a href="/myProject/blog/delete/${blog.blogId}">
             				<i class="ms-3 fa-solid fa-trash-can"></i> Delete
             			</a>
             			<button type="button" class="btn btn-outline-primary btn-small ms-3"
@@ -87,7 +87,7 @@
 				                <!-- Modal footer -->
 				                <div class="modal-footer">
 				                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
-				                    		onclick="location.href='/demo/blog/deleteConfirm/${blog.blogId}'" >Delete</button>
+				                    		onclick="location.href='/myProject/blog/deleteConfirm/${blog.blogId}'" >Delete</button>
 				                 	<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
 				                </div>
 				            </div>
