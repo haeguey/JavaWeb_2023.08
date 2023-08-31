@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%@ include file="./common/header.jspf" %>
+	<%@ include file="../common/header.jspf" %>
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous">
 	</script>
 	<script>
@@ -20,12 +20,12 @@
     </style>
 </head>
 <body>
-	<%@ include file="./common/top.jspf" %>
+	<%@ include file="../common/top.jspf" %>
 	
     <div class="container" style="margin-top:80px">
         <div class="row">
         	<!-- ============== aside.jspf를 삽입 ============== -->
-            <%@ include file="./common/aside.jspf" %>
+            <%@ include file="../common/aside.jspf" %>
             <!-- ==================== Main ==================== -->
 			<div class="col-9">
             	<h3>
@@ -98,6 +98,6 @@
 			<!-- ==================== Main ==================== -->
         </div>
     </div>	
-	<%@ include file="./common/bottom.jspf" %>
+	<%@ include file="../common/bottom.jspf" %>
 </body>
 </html>

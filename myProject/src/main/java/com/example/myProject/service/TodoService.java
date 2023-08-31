@@ -1,0 +1,53 @@
+package com.example.myProject.service;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.myProject.model.Todo;
+
+
+@Service
+public class TodoService {
+    private static List<Todo> todos = new ArrayList<Todo>();
+    private static int todoCount = 3;
+
+    static {
+        todos.add(new Todo(1, "admin", "Learn Spring MVC", new Date(), false));
+        todos.add(new Todo(2, "admin", "Learn Struts", new Date(), false));
+        todos.add(new Todo(3, "admin", "Learn Hibernate", new Date(), false));
+    }
+
+    public List<Todo> retrieveTodos(String user) {
+        List<Todo> filteredTodos = new ArrayList<Todo>();
+        for (Todo todo : todos) {
+//test:		System.out.println(todo);
+//test:		System.out.println(user);
+//test:     System.out.println(todo.getUser());
+            if (todo.getUser().equals(user)) {
+                filteredTodos.add(todo);
+            }
+        }
+//test: System.out.println(filteredTodos);
+        return filteredTodos;
+    }
+
+    public void addTodo(String name, String desc, Date targetDate,
+            boolean isDone) {
+        todos.add(new Todo(++todoCount, name, desc, targetDate, isDone));
+    }
+
+    public void deleteTodo(int id) {
+        Iterator<Todo> iterator = todos.iterator();
+        while (iterator.hasNext()) {
+            Todo todo = iterator.next();
+            if (todo.getId() == id) {
+                iterator.remove();
+            }
+        }
+    }
+}

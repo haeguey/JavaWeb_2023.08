@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%@ include file="./common/header.jspf" %>
+	<%@ include file="../common/header.jspf" %>
 	<style>
         th, td { text-align: center;}
     </style>
@@ -21,12 +21,12 @@
     </script>
 </head>
 <body>
-	<%@ include file="./common/top.jspf" %>
+	<%@ include file="../common/top.jspf" %>
 	
     <div class="container" style="margin-top:80px">
         <div class="row">
         	<!-- ============== aside.jspf를 삽입 ============== -->
-            <%@ include file="./common/aside.jspf" %>
+            <%@ include file="../common/aside.jspf" %>
             <!-- ==================== Main ==================== -->
 			<div class="col-9">
 			<table class="table table-sm table-borderless">
@@ -84,6 +84,6 @@
 			<!-- ==================== Main ==================== -->
         </div>
 	</div>	
-	<%@ include file="./common/bottom.jspf" %>
+	<%@ include file="../common/bottom.jspf" %>
 </body>
 </html>
